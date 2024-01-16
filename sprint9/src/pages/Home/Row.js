@@ -9,8 +9,10 @@ import {
   RightArrow,
   Image,
   ImageAndTitleDiv,
+  IconDiv,
 } from "./Row.styles";
 import { TbArrowBadgeLeft, TbArrowBadgeRight } from "react-icons/tb";
+import { FaRegCirclePlay } from "react-icons/fa6";
 
 function Row({ title, fetchURL }) {
   const [movies, setMovies] = useState([]);
@@ -36,23 +38,28 @@ function Row({ title, fetchURL }) {
       <h2>{title}</h2>
       <div>
         <StyledRow id={`slider-${title}`}>
+          <LeftArrow>
+            <TbArrowBadgeLeft size={40} onClick={slideLeft} />
+          </LeftArrow>
           {movies.map((movie) => (
             <ImageAndTitleDiv key={movie.id}>
-              <ImageContainer>
-                <LeftArrow>
-                  <TbArrowBadgeLeft size={40} onClick={slideLeft} />
-                </LeftArrow>
-                <Image
-                  src={`https://image.tmdb.org/t/p/w500/${movie?.backdrop_path}`}
-                  alt={movie?.title}
-                />
-                <RightArrow>
-                  <TbArrowBadgeRight size={40} onClick={slideRight} />
-                </RightArrow>
-              </ImageContainer>
-              <p>{movie?.title}</p>
+              {movie.title && movie.backdrop_path && (
+                <ImageContainer>
+                  <Image
+                    src={`https://image.tmdb.org/t/p/w1280/${movie?.backdrop_path}`}
+                    alt={movie?.title}
+                  />
+                  <IconDiv>
+                    <FaRegCirclePlay size={30} />
+                  </IconDiv>
+                </ImageContainer>
+              )}
+              {movie.title && <p>{movie.title}</p>}
             </ImageAndTitleDiv>
           ))}
+          <RightArrow>
+            <TbArrowBadgeRight size={40} onClick={slideRight} />
+          </RightArrow>
         </StyledRow>
       </div>
     </BigContainer>

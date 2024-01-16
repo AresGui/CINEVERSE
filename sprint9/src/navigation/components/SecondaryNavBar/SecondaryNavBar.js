@@ -8,6 +8,8 @@ import {
   LiLeft,
   StyledLink,
   LiRight,
+  LogoLanding,
+  StyledWord,
 } from "../MainNavBar/MainNavBar.styles";
 import { useState } from "react";
 
@@ -20,20 +22,23 @@ const SecondaryNavBar = () => {
 
   return (
     <NavbarContainer>
-      <div>
-        <Logo href="/Home">FILMFLIX</Logo>
-      </div>
+      <LogoLanding href="/Home">
+        <StyledWord>Cine</StyledWord>Verse
+      </LogoLanding>
       <ToggleButton onClick={toggleMenu} isOpen={isMenuOpen} href="#">
         <ToggleBar></ToggleBar>
         <ToggleBar></ToggleBar>
         <ToggleBar></ToggleBar>
       </ToggleButton>
       <LinksContainer isOpen={isMenuOpen}>
+        <div>
+          <search>Search</search>
+        </div>
         <LiLeft>
-          <StyledLink href="/Movies">MOVIES</StyledLink>
+          <StyledLink href="/Movies">Movies</StyledLink>
         </LiLeft>
         <LiRight>
-          <StyledLink href="/Series">SERIES</StyledLink>
+          <StyledLink href="/Series">TV Series</StyledLink>
         </LiRight>
       </LinksContainer>
     </NavbarContainer>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import MainNavBar from "../../navigation/components/MainNavBar/MainNavBar";
+// import MainNavBar from "../../navigation/components/MainNavBar/MainNavBar";
 import {
   Background,
   Button,
@@ -21,11 +21,11 @@ function LandingPage() {
   return (
     <>
       <Background>
-        <MainNavBar />
+        {/* <MainNavBar /> */}
         <MainContainer>
           <MainDiv>
             <LogoLanding>
-              <StyledWord>FILM</StyledWord>FLIX
+              <StyledWord>C</StyledWord>ine<StyledWord>V</StyledWord>erse
             </LogoLanding>
             <TextWrapper>
               <p>Iconic, award-winning series, movies, and more</p>

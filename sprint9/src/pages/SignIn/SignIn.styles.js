@@ -1,33 +1,32 @@
-import styled from 'styled-components';
-import { TextWrapper, MainDiv } from '../LandingPage/LandingPage.styles';
+import styled from "styled-components";
+import { TextWrapper, MainDiv } from "../LandingPage/LandingPage.styles";
 
 export const MainDiv2 = styled(MainDiv)`
-margin-top:0px;
+  margin-top: 0px;
 `;
 
 export const TextContainer = styled(TextWrapper)`
-margin: 0px 20px;
- font-family: 'Narnoor', serif;
+  margin: 0px 20px;
+  font-family: "Narnoor", serif;
   font-size: 1.3rem;
 `;
 
 export const Title = styled.h1`
-font-family: 'Narnoor', serif;
+  font-family: "Narnoor", serif;
   font-size: 2.3rem;
   margin: 0px;
 `;
 
 export const Text = styled.div`
-margin-top: 7px;
-display: flex;
-flex-direction: column;
-gap: 10px;
+  margin-top: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;
 
 export const Label = styled.label`
   text-align: left;
   margin-bottom: 5px;
-  
 `;
 
 export const Input = styled.input`
@@ -44,7 +43,7 @@ export const FormButtonContainer = styled.div`
 export const FormButton = styled.button`
   font-weight: bold;
   font-size: 1.1rem;
-  background-color: #8bac4a;
+  background-color: #e07a5f;
   color: white;
   font-weight: bold;
   border: none;
@@ -54,19 +53,19 @@ export const FormButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #b2d963;
+    background-color: #eab69f;
   }
-`
+`;
 export const SignupInfo = styled.div`
-display: flex;
-flex-direction: column;
-margin: 0px;
-padding: 0px;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
 `;
 
 export const SignupRedirect = styled.a`
-list-style: none;
-text-decoration: none;
-align-items: start;
-color: #edf2bc;
+  list-style: none;
+  text-decoration: none;
+  align-items: start;
+  color: #eab69f;
 `;

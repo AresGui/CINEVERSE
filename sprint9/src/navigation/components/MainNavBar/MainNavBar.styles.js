@@ -1,14 +1,16 @@
 import styled from "styled-components";
 
 export const NavbarContainer = styled.nav`
-  font-size: 18px;
-  /* overflow: hidden; */
-  background: rgba(0, 0, 0, 0);
+  font-size: 15px;
   display: flex;
   justify-content: space-between;
   height: auto;
   align-items: center;
-  padding: 10px;
+  z-index: 2;
+  width: 100%;
+  position: absolute;
+  padding: 0 10px;
+  box-sizing: border-box;
 
   @media (max-width: 560px) {
     flex-direction: column;
@@ -23,12 +25,35 @@ export const Logo = styled.a`
   /*  font-weight: bold; */
   color: inherit;
   text-decoration: none;
+  text-transform: unset;
 
   @media (max-width: 560px) {
     font-size: 2.5rem;
   }
 `;
 
+export const LogoLanding = styled.a`
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  padding-left: 20px;
+  /*  font-weight: bold; */
+  color: inherit;
+  text-decoration: none;
+  text-transform: unset;
+
+  @media (max-width: 560px) {
+    font-size: 2.5rem;
+  }
+`;
+
+export const StyledWord = styled.span`
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  color: #e07a5f;
+  @media (max-width: 560px) {
+    font-size: 2rem;
+  }
+`;
 export const LinksContainer = styled.ul`
   display: flex;
   align-items: center;
@@ -52,7 +77,7 @@ export const LiLeft = styled.li`
   padding: 0;
 
   &:hover {
-    background-color: #b2d963;
+    /* background-color: #b2d963; */
   }
 
   @media (max-width: 560px) {
@@ -63,11 +88,11 @@ export const LiLeft = styled.li`
     background-color: none;
     border: #b2d963 solid 3px;
     &:hover {
-      background-color: #b2d963;
+      /* background-color: #b2d963; */
     }
   }
   &:hover {
-    background-color: #b2d963;
+    /* background-color: #b2d963; */
   }
 `;
 
@@ -82,12 +107,13 @@ export const StyledLink = styled.a`
   margin: 0 10px;
   box-sizing: border-box;
 
-  border-radius: 10px;
+  /* border-radius: 10px;
   border: #b2d963 solid 3px;
-  background-color: #b2d900;
+  background-color: #b2d900; */
 
   &:hover {
-    background-color: #b2d963;
+    /* background-color: #b2d963; */
+    border-bottom: 2px solid white;
   }
 
   @media (max-width: 560px) {
@@ -96,17 +122,13 @@ export const StyledLink = styled.a`
 `;
 
 export const LiRight = styled(LiLeft)`
-  background-color: #b2d963;
   &:hover {
-    background-color: none;
-    border: #b2d963 solid 3px;
   }
 
   @media (max-width: 560px) {
     background-color: transparent;
-    border: #b2d963 solid 3px;
+
     &:hover {
-      background-color: #b2d963;
     }
   }
 `;

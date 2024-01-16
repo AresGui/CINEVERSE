@@ -8,7 +8,8 @@ export const ImageAndTitleDiv = styled.div`
   text-align: center;
 
   > p {
-    padding: 0 10px;
+    padding: 0 5px;
+    margin: 5px 0;
   }
 `;
 
@@ -18,6 +19,7 @@ export const ImageContainer = styled.div`
   margin: 5px 15px 4px 0px;
   border-radius: 18px;
   //overflow: hidden;
+  position: relative;
 `;
 
 export const Image = styled.img`
@@ -46,14 +48,22 @@ export const LeftArrow = styled.div`
   position: absolute;
   top: 50%;
   left: -50px;
-  z-index: 1;
+  z-index: 2;
   transform: translateY(-50%);
+  cursor: pointer;
 `;
 
 export const RightArrow = styled.div`
   position: absolute;
   top: 50%;
   right: -50px;
-  z-index: 1;
+  z-index: 2;
   transform: translateY(-50%);
+  cursor: pointer;
+`;
+
+export const IconDiv = styled.div`
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
 `;

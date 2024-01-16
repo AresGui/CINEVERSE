@@ -1,53 +1,49 @@
 import styled from "styled-components";
-import film from "../../assets/film.jpg";
+import film from "../../assets/popcorn.jpg";
 
 export const Background = styled.div`
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.3)
-    ),
-    url(${film});
+  background-image: url(${film});
   /* background-image: url(${film}); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
+  box-sizing: border-box;
 `;
 
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
-  padding-top: 50px;
+  justify-content: center;
+  height: 100vh;
+  box-sizing: border-box;
 `;
 
 export const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
-  padding: 30px;
-  height: auto;
-  width: auto;
+  padding: 80px 10px;
+  margin: 0;
+  height: 100vh;
+  width: 50%;
   color: white;
-  background: rgba(19, 19, 18, 0.9);
-  border: 5px black;
-  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.8);
 
   @media (max-width: 560px) {
-    padding: 20px;
-    margin: 0px 50px;
+    padding: 0;
+    margin: 0px;
   }
 `;
 
 export const LogoLanding = styled.h1`
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 3.5rem;
+  font-family: sans-serif;
+  font-size: 4.1rem;
   line-height: 1.5;
-  margin: 5px 0;
+  margin-bottom: 0;
 
   @media (max-width: 560px) {
     font-size: 2rem;
@@ -55,9 +51,9 @@ export const LogoLanding = styled.h1`
 `;
 
 export const StyledWord = styled.span`
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 3.5rem;
-  color: #b2d963;
+  font-family: sans-serif;
+  font-size: 4.1rem;
+  color: #e07a5f;
   @media (max-width: 560px) {
     font-size: 2rem;
   }
@@ -65,7 +61,9 @@ export const StyledWord = styled.span`
 
 export const TextWrapper = styled.div`
   font-family: "Narnoor", serif;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  margin-top: 0;
+  justify-content: center;
 
   @media (max-width: 560px) {
     font-size: 1rem;
@@ -73,23 +71,25 @@ export const TextWrapper = styled.div`
 `;
 
 export const Button = styled.button`
-  font-family: "Narnoor", serif;
+  font-family: sans-serif;
   font-size: 1.1rem;
   font-weight: bolder;
-  background: none;
-  background-color: #8bac4a;
+  justify-content: center;
+  background-color: #e07a5f;
   color: white;
-  font-weight: bold;
   cursor: pointer;
-  margin: 10px;
-  width: 50%;
-  padding: 5px;
+  width: 250px;
   height: auto;
+  padding: 10px;
+  margin-top: 20px;
   border-radius: 5px;
-  display: inline-block;
+  border: none;
+  letter-spacing: 1px;
+  /* display: inline-block; */
 
   &:hover {
-    background-color: #b2d963;
+    background-color: #eab69f;
+    color: white;
   }
 
   @media (max-width: 560px) {

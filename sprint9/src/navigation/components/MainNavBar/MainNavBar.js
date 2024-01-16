@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import {
   NavbarContainer,
-  Logo,
-  LinksContainer,
-  StyledLink,
+  LogoLanding,
+  StyledWord,
+  // LinksContainer,
+  // StyledLink,
   ToggleButton,
   ToggleBar,
 } from "./MainNavBar.styles";
@@ -17,18 +18,18 @@ const MainNavBar = () => {
 
   return (
     <NavbarContainer>
-      <div>
-        <Logo href="/">FILMFLIX</Logo>
-      </div>
+      <LogoLanding>
+        <StyledWord>Cine</StyledWord>Verse
+      </LogoLanding>
       <ToggleButton onClick={toggleMenu} isOpen={isMenuOpen} href="#">
         <ToggleBar></ToggleBar>
         <ToggleBar></ToggleBar>
         <ToggleBar></ToggleBar>
       </ToggleButton>
-      <LinksContainer isOpen={isMenuOpen}>
+      {/* <LinksContainer isOpen={isMenuOpen}>
         <StyledLink href="/Signin">SIGN IN</StyledLink>
         <StyledLink href="/Signup">SIGN UP</StyledLink>
-      </LinksContainer>
+      </LinksContainer> */}
     </NavbarContainer>
   );
 };
