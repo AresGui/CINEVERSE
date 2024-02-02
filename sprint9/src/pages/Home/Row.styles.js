@@ -20,6 +20,13 @@ export const ImageContainer = styled.div`
   border-radius: 18px;
   //overflow: hidden;
   position: relative;
+
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
 `;
 
 export const Image = styled.img`
@@ -32,7 +39,7 @@ export const Image = styled.img`
 export const StyledRow = styled.div`
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 `;
 
 export const BigContainer = styled.div`
@@ -62,8 +69,18 @@ export const RightArrow = styled.div`
   cursor: pointer;
 `;
 
-export const IconDiv = styled.div`
+export const IconDiv = styled.button`
   position: absolute;
   bottom: 5px;
   left: 5px;
+  background: transparent;
+  border: none;
 `;
+
+
+// export const SubContainer = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   z-index: 1;
+// `;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import film from "../../assets/popcorn.jpg";
+import film from "../../assets/espacio.jpg";
 
 export const Background = styled.div`
   background-image: url(${film});
@@ -31,7 +31,7 @@ export const MainDiv = styled.div`
   height: 100vh;
   width: 50%;
   color: white;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
 
   @media (max-width: 560px) {
     padding: 0;

@@ -66,3 +66,12 @@ export const RightArrow = styled.div`
   transform: translateY(-50%);
   cursor: pointer;
 `;
+
+export const PlayIcon = styled.div`
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+
+&:hover {
+  color: #e07a5f;
+}
+`;

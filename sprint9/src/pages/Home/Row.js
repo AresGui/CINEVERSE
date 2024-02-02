@@ -9,12 +9,11 @@ import {
   RightArrow,
   Image,
   ImageAndTitleDiv,
-  IconDiv,
 } from "./Row.styles";
 import { TbArrowBadgeLeft, TbArrowBadgeRight } from "react-icons/tb";
-import { FaRegCirclePlay } from "react-icons/fa6";
+// import MovieTrailer from "../../navigation/components/MovieTrailer/MovieTrailer";
 
-function Row({ title, fetchURL }) {
+function Row({ title, fetchURL, setSelectedMovieTitle, setisOpen }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -33,6 +32,11 @@ function Row({ title, fetchURL }) {
     slider.scrollLeft = slider.scrollLeft + 300;
   };
 
+  const manageClick = (movie) => {
+    setSelectedMovieTitle(movie?.title);
+    setisOpen(true);
+  };
+
   return (
     <BigContainer>
       <h2>{title}</h2>
@@ -44,14 +48,11 @@ function Row({ title, fetchURL }) {
           {movies.map((movie) => (
             <ImageAndTitleDiv key={movie.id}>
               {movie.title && movie.backdrop_path && (
-                <ImageContainer>
+                <ImageContainer onClick={() => manageClick(movie)}>
                   <Image
                     src={`https://image.tmdb.org/t/p/w1280/${movie?.backdrop_path}`}
                     alt={movie?.title}
                   />
-                  <IconDiv>
-                    <FaRegCirclePlay size={30} />
-                  </IconDiv>
                 </ImageContainer>
               )}
               {movie.title && <p>{movie.title}</p>}

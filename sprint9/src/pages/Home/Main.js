@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import requests from "../../services/Requests";
-import { MainImage, MainContainer, Image, TextDiv } from "./Main.styles";
+import { MainImage, MainContainer, Image, TextDiv, PlayIcon } from "./Main.styles";
 import { LeftArrow, RightArrow } from "./Main.styles";
 import { TbArrowBadgeLeft, TbArrowBadgeRight } from "react-icons/tb";
 import { FaRegCirclePlay } from "react-icons/fa6";
 import SecondaryNavBar from "../../navigation/components/SecondaryNavBar/SecondaryNavBar";
 
-function Main() {
+function Main({setSelectedMovieTitle, setisOpen}) {
   const [movies, setMovies] = useState([]);
   const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
 
@@ -33,6 +33,11 @@ function Main() {
     );
   };
 
+  const manageClick = (movie) => {
+    setSelectedMovieTitle(movie?.title);
+    setisOpen(true);
+  };
+
   return (
     <MainContainer>
       <MainImage>
@@ -49,9 +54,9 @@ function Main() {
         </RightArrow>
         <TextDiv>
           <h1>{movie?.title}</h1>
-          <div>
+          <PlayIcon onClick={() => manageClick(movie)}>
             <FaRegCirclePlay size={30} />
-          </div>
+          </PlayIcon>
           {/* <p>
                     Released: {movie?.release_date}
                 </p> */}

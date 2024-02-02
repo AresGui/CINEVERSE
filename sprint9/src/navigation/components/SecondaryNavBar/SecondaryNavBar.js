@@ -12,6 +12,7 @@ import {
   StyledWord,
 } from "../MainNavBar/MainNavBar.styles";
 import { useState } from "react";
+// import Search from "./Search";
 
 const SecondaryNavBar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -31,15 +32,13 @@ const SecondaryNavBar = () => {
         <ToggleBar></ToggleBar>
       </ToggleButton>
       <LinksContainer isOpen={isMenuOpen}>
-        <div>
-          <search>Search</search>
-        </div>
         <LiLeft>
           <StyledLink href="/Movies">Movies</StyledLink>
         </LiLeft>
         <LiRight>
           <StyledLink href="/Series">TV Series</StyledLink>
         </LiRight>
+        {/* <Search /> */}
       </LinksContainer>
     </NavbarContainer>
   );

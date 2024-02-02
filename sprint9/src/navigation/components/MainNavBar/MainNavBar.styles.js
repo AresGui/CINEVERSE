@@ -107,13 +107,11 @@ export const StyledLink = styled.a`
   margin: 0 10px;
   box-sizing: border-box;
 
-  /* border-radius: 10px;
-  border: #b2d963 solid 3px;
-  background-color: #b2d900; */
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
 
   &:hover {
-    /* background-color: #b2d963; */
-    border-bottom: 2px solid white;
+    color: #e07a5f;
   }
 
   @media (max-width: 560px) {
