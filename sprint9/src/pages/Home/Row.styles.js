@@ -24,7 +24,7 @@ export const ImageContainer = styled.div`
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
 `;
@@ -36,15 +36,29 @@ export const Image = styled.img`
   object-fit: cover;
 `;
 
+export const AnotherContainer = styled.div`
+  position: relative;
+`;
+
 export const StyledRow = styled.div`
   display: flex;
-  flex-wrap: nowrap;
+  overflow-x: scroll;
+  padding: 10px 5px;
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  /* overflow-y: hidden; */
+  /* flex-wrap: nowrap; */
+  position: relative;
   /* overflow-x: hidden; */
 `;
 
 export const BigContainer = styled.div`
   max-width: 100%;
-  position: relative;
+  /* position: relative; */
   font-family: "Narnoor", serif;
   font-size: 1.1rem;
   color: #fff;
@@ -76,7 +90,6 @@ export const IconDiv = styled.button`
   background: transparent;
   border: none;
 `;
-
 
 // export const SubContainer = styled.div`
 //   position: absolute;

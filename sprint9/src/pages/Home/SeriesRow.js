@@ -14,7 +14,7 @@ import {
 import { TbArrowBadgeLeft, TbArrowBadgeRight } from "react-icons/tb";
 import { FaRegCirclePlay } from "react-icons/fa6";
 
-function Row({ title, fetchURL }) {
+function Row({ title, fetchURL, setSelectedSeriesTitle, setisOpen }) {
   const [movies, setMovies] = useState([]);
   /*  const [selectedMovie, setSelectedMovie] = useState(null); */
 
@@ -38,6 +38,11 @@ function Row({ title, fetchURL }) {
           setSelectedMovie(movie);
       }; */
 
+      const manageClick = (movie) => {
+        setSelectedSeriesTitle(movie?.title);
+        setisOpen(true);
+      };
+
   return (
     <BigContainer>
       <div>
@@ -49,7 +54,7 @@ function Row({ title, fetchURL }) {
             </LeftArrow>
             {movies.map((movie) => (
               <ImageAndTitleDiv key={movie.id}>
-                <ImageContainer>
+                <ImageContainer onClick={() => manageClick(movie)}>
                   <Image
                     src={`https://image.tmdb.org/t/p/w1280/${movie?.backdrop_path}`}
                     alt={movie?.name}

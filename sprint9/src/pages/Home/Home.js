@@ -14,7 +14,7 @@ function Home() {
 
   return (
     <div style={{ position: "relative" }}>
-      <MovieTrailer movieTitle={selectedMovieTitle} isOpen={isOpen} />
+      <MovieTrailer movieTitle={selectedMovieTitle} isOpen={isOpen} setisOpen={setisOpen}/>
       <Main
         setSelectedMovieTitle={setSelectedMovieTitle}
         setisOpen={setisOpen}
