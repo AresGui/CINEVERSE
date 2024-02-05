@@ -8,42 +8,42 @@ import { GreatContainer } from "./Home.styles";
 
 function Home() {
   const [selectedMovieTitle, setSelectedMovieTitle] = useState("");
-  const [isOpen, setisOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   console.log(selectedMovieTitle);
   console.log(isOpen);
 
   return (
     <div style={{ position: "relative" }}>
-      <MovieTrailer movieTitle={selectedMovieTitle} isOpen={isOpen} setisOpen={setisOpen}/>
+      <MovieTrailer movieTitle={selectedMovieTitle} isOpen={isOpen} setIsOpen={setIsOpen}/>
       <Main
         setSelectedMovieTitle={setSelectedMovieTitle}
-        setisOpen={setisOpen}
+        setIsOpen={setIsOpen}
       />
       <GreatContainer>
         <Row
           title="Top rated"
           fetchURL={requests.requestTopRated}
           setSelectedMovieTitle={setSelectedMovieTitle}
-          setisOpen={setisOpen}
+          setIsOpen={setIsOpen}
         />
         <Row
           title="Trending"
           fetchURL={requests.requestTrending}
           setSelectedMovieTitle={setSelectedMovieTitle}
-          setisOpen={setisOpen}
+          setIsOpen={setIsOpen}
         />
         <Row
           title="Popular"
           fetchURL={requests.requestPopular}
           setSelectedMovieTitle={setSelectedMovieTitle}
-          setisOpen={setisOpen}
+          setIsOpen={setIsOpen}
         />
         {/* <Row title='Horror' fetchURL={requests.requestHorror} /> */}
         <Row
           title="Up coming"
           fetchURL={requests.requestUpcoming}
           setSelectedMovieTitle={setSelectedMovieTitle}
-          setisOpen={setisOpen}
+          setIsOpen={setIsOpen}
         />
       </GreatContainer>
     </div>

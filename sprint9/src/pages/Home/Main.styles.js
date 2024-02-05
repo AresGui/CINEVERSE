@@ -4,7 +4,7 @@ export const MainContainer = styled.div`
   width: auto;
   height: auto;
   font-family: "Narnoor", serif;
-  position: relative; /* Set position to relative for absolute positioning inside */
+  position: relative;
 `;
 
 export const MainImage = styled.div`

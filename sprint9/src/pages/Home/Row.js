@@ -14,7 +14,7 @@ import {
 import { TbArrowBadgeLeft, TbArrowBadgeRight } from "react-icons/tb";
 // import MovieTrailer from "../../navigation/components/MovieTrailer/MovieTrailer";
 
-function Row({ title, fetchURL, setSelectedMovieTitle, setisOpen }) {
+function Row({ title, fetchURL, setSelectedMovieTitle, setIsOpen }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ function Row({ title, fetchURL, setSelectedMovieTitle, setisOpen }) {
 
   const manageClick = (movie) => {
     setSelectedMovieTitle(movie?.title);
-    setisOpen(true);
+    setIsOpen(true);
   };
 
   return (

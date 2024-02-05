@@ -9,7 +9,7 @@ import {
 } from "./MovieTrailer.styles";
 import { RiCloseCircleFill } from "react-icons/ri";
 
-const MovieTrailer = ({ movieTitle, isOpen, setisOpen }) => {
+const MovieTrailer = ({ movieTitle, isOpen, setIsOpen }) => {
   const [videoURL, setVideoURL] = useState("");
 
   useEffect(() => {
@@ -26,12 +26,12 @@ const MovieTrailer = ({ movieTitle, isOpen, setisOpen }) => {
   }, [movieTitle]);
 
   return (
-    <BigContainer isOpen={isOpen} onClick={() => setisOpen(false)}>
+    <BigContainer isOpen={isOpen} onClick={() => setIsOpen(false)}>
       <TrailerContainer>
         <CloseContainer>
           <RiCloseCircleFill
             size={40}
-            onClick={() => setisOpen(false)}
+            onClick={() => setIsOpen(false)}
           ></RiCloseCircleFill>
         </CloseContainer>
         <ReactPlayer url={videoURL} controls={true} />

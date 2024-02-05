@@ -7,7 +7,7 @@ import { TbArrowBadgeLeft, TbArrowBadgeRight } from "react-icons/tb";
 import { FaRegCirclePlay } from "react-icons/fa6";
 import SecondaryNavBar from "../../navigation/components/SecondaryNavBar/SecondaryNavBar";
 
-function Main({setSelectedMovieTitle, setisOpen}) {
+function Main({setSelectedMovieTitle, setIsOpen}) {
   const [movies, setMovies] = useState([]);
   const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
 
@@ -35,7 +35,7 @@ function Main({setSelectedMovieTitle, setisOpen}) {
 
   const manageClick = (movie) => {
     setSelectedMovieTitle(movie?.title);
-    setisOpen(true);
+    setIsOpen(true);
   };
 
   return (

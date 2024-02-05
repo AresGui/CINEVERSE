@@ -8,19 +8,20 @@ import {
   LeftArrow,
   RightArrow,
   Image,
-  IconDiv,
   ImageAndTitleDiv,
+  AnotherContainer,
 } from "./Row.styles";
 import { TbArrowBadgeLeft, TbArrowBadgeRight } from "react-icons/tb";
-import { FaRegCirclePlay } from "react-icons/fa6";
 
-function Row({ title, fetchURL, setSelectedSeriesTitle, setisOpen }) {
+function Row({ title, fetchURL, setSelectedSeriesTitle, setIsOpen }) {
   const [movies, setMovies] = useState([]);
   /*  const [selectedMovie, setSelectedMovie] = useState(null); */
 
   useEffect(() => {
     axios.get(fetchURL).then((response) => {
       setMovies(response.data.results);
+
+      // .filter((movie) => movie.backdrop_path)
     });
   }, [fetchURL]);
 
@@ -34,45 +35,38 @@ function Row({ title, fetchURL, setSelectedSeriesTitle, setisOpen }) {
     slider.scrollLeft = slider.scrollLeft + 500;
   };
 
-  /*   const handleClick = (movie) => {
-          setSelectedMovie(movie);
-      }; */
 
-      const manageClick = (movie) => {
-        setSelectedSeriesTitle(movie?.title);
-        setisOpen(true);
-      };
+  const manageClick = (movie) => {
+    setSelectedSeriesTitle(movie?.name);
+    setIsOpen(true);
+  };
 
   return (
     <BigContainer>
-      <div>
-        <h2>{title}</h2>
-        <div>
-          <StyledRow id={`slider-${title}`}>
-            <LeftArrow>
-              <TbArrowBadgeLeft size={40} onClick={slideLeft} />
-            </LeftArrow>
-            {movies.map((movie) => (
-              <ImageAndTitleDiv key={movie.id}>
-                <ImageContainer onClick={() => manageClick(movie)}>
-                  <Image
-                    src={`https://image.tmdb.org/t/p/w1280/${movie?.backdrop_path}`}
-                    alt={movie?.name}
-                  />
-                  <IconDiv>
-                    <FaRegCirclePlay size={30} />
-                  </IconDiv>
-                </ImageContainer>
-                {movie?.name && <p>{movie?.name}</p>}
-              </ImageAndTitleDiv>
-            ))}
-            <RightArrow>
-              <TbArrowBadgeRight size={40} onClick={slideRight} />
-            </RightArrow>
-          </StyledRow>
-        </div>
-      </div>
-      {/*  {selectedMovie && (
+      <h2>{title}</h2>
+      <AnotherContainer>
+        <LeftArrow>
+          <TbArrowBadgeLeft size={40} onClick={slideLeft} />
+        </LeftArrow>
+        <StyledRow id={`slider-${title}`}>
+          {movies.map((movie) => (
+            <ImageAndTitleDiv key={movie.id}>
+              {movie.name && movie.backdrop_path && (
+              <ImageContainer onClick={() => manageClick(movie)}>
+                <Image
+                  src={`https://image.tmdb.org/t/p/w1280/${movie?.backdrop_path}`}
+                  alt={movie?.name}
+                />
+              </ImageContainer>
+              )}
+              {movie.name && movie.backdrop_path && <p>{movie?.name}</p>}
+            </ImageAndTitleDiv>
+          ))}
+        </StyledRow>
+        <RightArrow>
+          <TbArrowBadgeRight size={40} onClick={slideRight} />
+        </RightArrow>
+        {/*  {selectedMovie && (
                 <div>
                     <h1>{selectedMovie.name}</h1>
                     <div>
@@ -82,6 +76,7 @@ function Row({ title, fetchURL, setSelectedSeriesTitle, setisOpen }) {
                     <p>{selectedMovie.overview}</p>
                 </div>
             )} */}
+      </AnotherContainer>
     </BigContainer>
   );
 }

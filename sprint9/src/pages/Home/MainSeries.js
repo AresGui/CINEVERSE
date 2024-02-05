@@ -13,7 +13,7 @@ import { TbArrowBadgeLeft, TbArrowBadgeRight } from "react-icons/tb";
 import { FaRegCirclePlay } from "react-icons/fa6";
 import SecondaryNavBar from "../../navigation/components/SecondaryNavBar/SecondaryNavBar";
 
-function MainSeries({ setSelectedSeriesTitle, setisOpen }) {
+function MainSeries({ setSelectedSeriesTitle, setIsOpen }) {
   const [movies, setMovies] = useState([]);
   const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
 
@@ -41,8 +41,15 @@ function MainSeries({ setSelectedSeriesTitle, setisOpen }) {
 
   const manageClick = (movie) => {
     setSelectedSeriesTitle(movie?.name);
-    setisOpen(true);
+    setIsOpen(true);
   };
+
+  const renderImage = movie.overview && movie.backdrop_path ? (
+    <Image
+    src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
+    alt={movie?.name}
+  />
+) : setCurrentMovieIndex((prevIndex) => prevIndex + 1);
 
   return (
     <MainContainer>
@@ -51,10 +58,13 @@ function MainSeries({ setSelectedSeriesTitle, setisOpen }) {
         <LeftArrow>
           <TbArrowBadgeLeft size={40} onClick={slideLeft} />
         </LeftArrow>
-        <Image
-          src={`https://image.tmdb.org/t/p/w1280/${movie?.backdrop_path}`}
-          alt={movie?.name}
-        />
+        {/* {movie.overview && movie.backdrop_path ? (
+    <Image
+      src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
+      alt={movie?.name}
+    />
+  ) : setCurrentMovieIndex((prevIndex) => prevIndex + 1)} */}
+        {renderImage}
         <RightArrow>
           <TbArrowBadgeRight size={40} onClick={slideRight} />
         </RightArrow>
