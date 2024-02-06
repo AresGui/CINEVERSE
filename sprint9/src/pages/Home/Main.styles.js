@@ -21,7 +21,7 @@ export const MainImage = styled.div`
     height: 100%;
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.9)
     );
     z-index: 1;

@@ -33,7 +33,7 @@ const SecondaryNavBar = () => {
       </ToggleButton>
       <LinksContainer isOpen={isMenuOpen}>
         <LiLeft>
-          <StyledLink href="/Movies">Movies</StyledLink>
+          <StyledLink href="/Home">Movies</StyledLink>
         </LiLeft>
         <LiRight>
           <StyledLink href="/Series">TV Series</StyledLink>

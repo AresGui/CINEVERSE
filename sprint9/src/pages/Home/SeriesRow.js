@@ -50,7 +50,7 @@ function Row({ title, fetchURL, setSelectedSeriesTitle, setIsOpen }) {
         </LeftArrow>
         <StyledRow id={`slider-${title}`}>
           {movies.map((movie) => (
-            <ImageAndTitleDiv key={movie.id}>
+           <ImageAndTitleDiv key={movie.id}>
               {movie.name && movie.backdrop_path && (
               <ImageContainer onClick={() => manageClick(movie)}>
                 <Image
@@ -61,6 +61,7 @@ function Row({ title, fetchURL, setSelectedSeriesTitle, setIsOpen }) {
               )}
               {movie.name && movie.backdrop_path && <p>{movie?.name}</p>}
             </ImageAndTitleDiv>
+          
           ))}
         </StyledRow>
         <RightArrow>

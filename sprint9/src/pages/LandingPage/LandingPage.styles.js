@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import film from "../../assets/espacio.jpg";
+import film from "../../assets/interstellar.jpg";
 
 export const Background = styled.div`
   background-image: url(${film});
@@ -26,12 +26,10 @@ export const MainDiv = styled.div`
   align-items: center;
   justify-content: space-around;
   text-align: center;
-  padding: 80px 10px;
+  padding: 30px 30px;
   margin: 0;
-  height: 100vh;
-  width: 50%;
   color: white;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
 
   @media (max-width: 560px) {
     padding: 0;
@@ -81,7 +79,7 @@ export const Button = styled.button`
   width: 250px;
   height: auto;
   padding: 10px;
-  margin-top: 20px;
+  margin: 20px 0;
   border-radius: 5px;
   border: none;
   letter-spacing: 1px;

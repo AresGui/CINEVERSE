@@ -13,7 +13,7 @@ import { TbArrowBadgeLeft, TbArrowBadgeRight } from "react-icons/tb";
 import { FaRegCirclePlay } from "react-icons/fa6";
 import SecondaryNavBar from "../../navigation/components/SecondaryNavBar/SecondaryNavBar";
 
-function MainSeries({ setSelectedSeriesTitle, setIsOpen }) {
+function MainSeries({ videoKey, setSelectedSeriesTitle, setIsOpen }) {
   const [movies, setMovies] = useState([]);
   const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
 
@@ -21,9 +21,17 @@ function MainSeries({ setSelectedSeriesTitle, setIsOpen }) {
 
   useEffect(() => {
     axios.get(series.popular).then((response) => {
-      setMovies(response.data.results);
+      setMovies(
+        response.data.results.filter(
+          (movie) => movie.overview && movie.backdrop_path
+        )
+      );
+
+      if (videoKey === null) {
+        setCurrentMovieIndex(+1);
+      }
     });
-  }, []);
+  }, [videoKey]);
 
   const movie = movies[currentMovieIndex];
 
@@ -44,12 +52,12 @@ function MainSeries({ setSelectedSeriesTitle, setIsOpen }) {
     setIsOpen(true);
   };
 
-  const renderImage = movie.overview && movie.backdrop_path ? (
-    <Image
-    src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
-    alt={movie?.name}
-  />
-) : setCurrentMovieIndex((prevIndex) => prevIndex + 1);
+  //   const renderImage = movie.overview && movie.backdrop_path ? (
+  //     <Image
+  //     src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
+  //     alt={movie?.name}
+  //   />
+  // ) : setCurrentMovieIndex((prevIndex) => prevIndex + 1);
 
   return (
     <MainContainer>
@@ -58,13 +66,17 @@ function MainSeries({ setSelectedSeriesTitle, setIsOpen }) {
         <LeftArrow>
           <TbArrowBadgeLeft size={40} onClick={slideLeft} />
         </LeftArrow>
+        <Image
+          src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
+          alt={movie?.name}
+        />
         {/* {movie.overview && movie.backdrop_path ? (
     <Image
       src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
       alt={movie?.name}
     />
   ) : setCurrentMovieIndex((prevIndex) => prevIndex + 1)} */}
-        {renderImage}
+        {/* {renderImage} */}
         <RightArrow>
           <TbArrowBadgeRight size={40} onClick={slideRight} />
         </RightArrow>
