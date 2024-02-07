@@ -3,7 +3,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../services/firebase";
 import { useNavigate } from "react-router-dom";
 import { AuthenticatedContext } from "../../navigation/AuthenticatedContext";
-import MainNavBar from "../../navigation/components/MainNavBar/MainNavBar";
+// import MainNavBar from "../../navigation/components/MainNavBar/MainNavBar";
 import { Background, MainContainer } from "../LandingPage/LandingPage.styles";
 import {
   Text,
@@ -35,8 +35,8 @@ function SignIn() {
         console.log(userCredential);
         //set isAuthenticated to true
         setIsAuthenticated(true);
-        //redirect to Home
-        navigate("/Home");
+        //redirect to Movies
+        navigate("/Movies");
       })
       .catch((error) => {
         console.log(error);

@@ -101,11 +101,13 @@ export const StyledLink = styled.a`
   font-family: "Narnoor", serif;
   font-size: 1.5rem;
   color: white;
+  color: ${props => (props.active ? "#e07a5f" : "white")};
   display: flex;
   align-items: center;
   padding: 0 3px 5px 3px;
   margin: 0 10px;
   box-sizing: border-box;
+  font-weight: bold;
 
   cursor: pointer;
   transition: color 0.3s ease-in-out;

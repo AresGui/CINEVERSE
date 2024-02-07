@@ -23,7 +23,7 @@ function Main({setSelectedMovieTitle, setIsOpen}) {
 
   const slideLeft = () => {
     setCurrentMovieIndex((prevIndex) =>
-      prevIndex === movies.length - 1 ? 0 : prevIndex - 1
+      prevIndex === 0 ? movies.length - 1 : prevIndex - 1
     );
   };
 

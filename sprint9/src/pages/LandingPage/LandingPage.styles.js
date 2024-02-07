@@ -26,10 +26,11 @@ export const MainDiv = styled.div`
   align-items: center;
   justify-content: space-around;
   text-align: center;
-  padding: 30px 30px;
+  padding: 30px 40px;
   margin: 0;
   color: white;
   background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
 
   @media (max-width: 560px) {
     padding: 0;

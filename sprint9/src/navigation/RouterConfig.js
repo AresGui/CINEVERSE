@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom';
 import LandingPage from '../pages/LandingPage/LandingPage';
-import Home from '../pages/Home/Home';
+// import Home from '../pages/Home/Home';
 import SignIn from '../pages/SignIn/SignIn';
 import SignUp from '../pages/SignUp/SignUp';
 import Movies from '../pages/Movies/Movies';
@@ -18,10 +18,10 @@ const RouterConfig = () => {
         <div>
             <Routes>
                 <Route exact path="/" element={<LandingPage />} />
-                <Route
+                {/* <Route
                     path="/Home"
                     element={isAuthenticated ? (<Home />) : (<Navigate to="/" replace />)}
-                />
+                /> */}
                 <Route path="/Signin" element={<SignIn />} />
                 <Route path="/Signup" element={<SignUp />} />
                 <Route

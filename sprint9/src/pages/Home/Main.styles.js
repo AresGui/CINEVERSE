@@ -21,7 +21,7 @@ export const MainImage = styled.div`
     height: 100%;
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.9)
     );
     z-index: 1;
@@ -71,7 +71,7 @@ export const PlayIcon = styled.div`
   cursor: pointer;
   transition: color 0.2s ease-in-out;
 
-&:hover {
-  color: #e07a5f;
-}
+  &:hover {
+    color: #e07a5f;
+  }
 `;
