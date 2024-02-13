@@ -27,11 +27,11 @@ function MainSeries({ videoKey, setSelectedSeriesTitle, setIsOpen }) {
         )
       );
 
-      if (videoKey === null) {
-        setCurrentMovieIndex(+1);
+      if (videoKey === false) {
+        setCurrentMovieIndex((prevMovieIndex) => prevMovieIndex + 1);
       }
     });
-  }, [videoKey]);
+  }, []);
 
   const movie = movies[currentMovieIndex];
 
@@ -58,6 +58,16 @@ function MainSeries({ videoKey, setSelectedSeriesTitle, setIsOpen }) {
   //     alt={movie?.name}
   //   />
   // ) : setCurrentMovieIndex((prevIndex) => prevIndex + 1);
+
+  // useEffect(() => {
+  //   if (videoKey === false) {
+  //     setCurrentMovieIndex((prevMovieIndex) =>
+  //       (prevMovieIndex + 1) % movies.length
+  //     );
+  //   }
+  // }, [videoKey, movies, slideLeft, slideRight]);
+
+
 
   return (
     <MainContainer>

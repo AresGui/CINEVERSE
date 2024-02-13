@@ -4,11 +4,30 @@ import film from "../../assets/interstellar.jpg";
 export const Background = styled.div`
   background-image: url(${film});
   /* background-image: url(${film}); */
+  /* background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; */
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  width: 100%;
   height: 100vh;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  /* height: 100vh; */
+  /* box-sizing: border-box; */
+
+  /* max-width: 100%;
+  height: auto;
+  width: auto; */
+
+  @media (max-width: 560px) {
+  }
 `;
 
 export const MainContainer = styled.div`
@@ -21,51 +40,70 @@ export const MainContainer = styled.div`
 `;
 
 export const MainDiv = styled.div`
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   text-align: center;
-  padding: 30px 40px;
-  margin: 0;
+  padding: 10px 20px;
   color: white;
   background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
+
+  @media (min-width: 900px) {
+    max-width: 40%;
+  }
+
+  @media (min-width: 560px) {
+    max-width: 55%;
+  }
 
   @media (max-width: 560px) {
-    padding: 0;
-    margin: 0px;
+    max-width: 65%;
   }
 `;
 
 export const LogoLanding = styled.h1`
   font-family: sans-serif;
-  font-size: 4.1rem;
+  font-size: 3.5rem;
   line-height: 1.5;
   margin-bottom: 0;
 
+  @media (max-width: 768px) {
+    font-size: 3.3;
+  }
+
   @media (max-width: 560px) {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 `;
 
 export const StyledWord = styled.span`
   font-family: sans-serif;
-  font-size: 4.1rem;
+  /* font-size: 3.5rem; */
   color: #e07a5f;
   @media (max-width: 560px) {
-    font-size: 2rem;
+    /* font-size: 2rem; */
   }
 `;
 
 export const TextWrapper = styled.div`
   font-family: "Narnoor", serif;
   font-size: 1.5rem;
-  margin-top: 0;
-  justify-content: center;
+  /* margin-top: 0; */
+  /* justify-content: center; */
+
+  p {
+    margin: 10px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 
   @media (max-width: 560px) {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 `;
 
@@ -77,11 +115,11 @@ export const Button = styled.button`
   background-color: #e07a5f;
   color: white;
   cursor: pointer;
-  width: 250px;
+  width: 50%;
   height: auto;
   padding: 10px;
-  margin: 20px 0;
-  border-radius: 5px;
+  margin: 30px 0;
+  border-radius: 9px;
   border: none;
   letter-spacing: 1px;
   /* display: inline-block; */
@@ -91,7 +129,13 @@ export const Button = styled.button`
     color: white;
   }
 
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 7px;
+  }
+
   @media (max-width: 560px) {
     font-size: 0.9rem;
+    /* padding: 3px; */
   }
 `;

@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import {
   Background,
   Button,
-  MainContainer,
   MainDiv,
   LogoLanding,
   TextWrapper,
@@ -22,7 +21,7 @@ function LandingPage() {
     <>
       <Background>
         {/* <MainNavBar /> */}
-        <MainContainer>
+        {/* <MainContainer> */}
           <MainDiv>
             <LogoLanding>
               <StyledWord>C</StyledWord>ine<StyledWord>V</StyledWord>erse
@@ -34,7 +33,7 @@ function LandingPage() {
             </TextWrapper>
             <Button onClick={handleButton}>SIGN UP NOW</Button>
           </MainDiv>
-        </MainContainer>
+        {/* </MainContainer> */}
       </Background>
     </>
   );

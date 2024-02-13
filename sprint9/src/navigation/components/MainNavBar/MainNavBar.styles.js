@@ -51,7 +51,7 @@ export const StyledWord = styled.span`
   font-size: 3rem;
   color: #e07a5f;
   @media (max-width: 560px) {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 `;
 export const LinksContainer = styled.ul`
@@ -62,37 +62,44 @@ export const LinksContainer = styled.ul`
 
   @media (max-width: 560px) {
     display: ${({ isOpen }) => (isOpen ? "flex" : "none")} !important;
+    position: absolute;
+    top: 40px;
+    right: 40px;
     flex-direction: column;
-    padding: 0;
+    justify-content: center;
+    align-items: right;
+    /* padding: 0;
     margin: 0;
-    width: 100%;
+    width: auto;
+    border: 3px solid pink;*/
   }
 `;
 
 export const LiLeft = styled.li`
   list-style: none;
-  margin: 0 7px;
+  /* margin: 0 7px; */
   display: flex;
+  justify-content: right;
   align-items: center;
-  padding: 0;
+  /* padding: 0; */
 
   &:hover {
-    /* background-color: #b2d963; */
+    cursor: pointer;
   }
 
   @media (max-width: 560px) {
     display: flex;
     width: 100%;
     text-align: center;
-    padding: 0;
-    background-color: none;
-    border: #b2d963 solid 3px;
+    justify-content: center;
+    padding: 0 15px;
+    /* border: #b2d963 solid 3px; */
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+
     &:hover {
-      /* background-color: #b2d963; */
+      background-color: #e07a5f;
     }
-  }
-  &:hover {
-    /* background-color: #b2d963; */
   }
 `;
 
@@ -100,8 +107,8 @@ export const StyledLink = styled.a`
   text-decoration: none;
   font-family: "Narnoor", serif;
   font-size: 1.5rem;
-  color: white;
-  color: ${props => (props.active ? "#e07a5f" : "white")};
+  /* color: white; */
+  color: ${(props) => (props.active ? "#e07a5f" : "white")};
   display: flex;
   align-items: center;
   padding: 0 3px 5px 3px;
@@ -112,31 +119,27 @@ export const StyledLink = styled.a`
   cursor: pointer;
   transition: color 0.3s ease-in-out;
 
-  &:hover {
+  @media (max-width: 560px) {
+    font-size: 1.5rem;
+    color: black;
+  }
+
+  /* &:hover {
     color: #e07a5f;
-  }
-
-  @media (max-width: 560px) {
-    font-size: 2rem;
-  }
+  } */
 `;
 
-export const LiRight = styled(LiLeft)`
-  &:hover {
-  }
-
-  @media (max-width: 560px) {
-    background-color: transparent;
-
-    &:hover {
-    }
-  }
-`;
+// export const LiRight = styled(LiLeft)`
+//   @media (max-width: 560px) {
+//     background-color: rgba(255, 255, 255);
+//     border: none;
+//   }
+// `;
 
 export const ToggleButton = styled.a`
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 10px;
+  right: 90px;
   display: none;
   flex-direction: column;
   justify-content: space-between;

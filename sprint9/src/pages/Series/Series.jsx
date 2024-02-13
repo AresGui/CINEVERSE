@@ -11,7 +11,7 @@ import SeriesTrailer from "../../navigation/components/MovieTrailer/SeriesTraile
 function Series() {
   const [selectedSeriesTitle, setSelectedSeriesTitle] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const [videoKey, setVideoKey] = useState();
+  const [videoKey, setVideoKey] = useState(false);
 
   return (
     <div style={{ position: "relative" }}>

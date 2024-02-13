@@ -1,8 +1,19 @@
 import styled from "styled-components";
-import { TextWrapper, MainDiv } from "../LandingPage/LandingPage.styles";
+import { TextWrapper } from "../LandingPage/LandingPage.styles";
 
-export const MainDiv2 = styled(MainDiv)`
-  margin-top: 0px;
+export const MainDiv2 = styled.div`
+  /* width: 300px; */
+  max-width: 80%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
 `;
 
 export const TextContainer = styled(TextWrapper)`

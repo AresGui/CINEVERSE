@@ -2,12 +2,20 @@ import React, { useEffect } from "react";
 import "./MovieTrailer.css";
 import ReactPlayer from "react-player";
 import axios from "axios";
-import { BigContainer, TrailerContainer, CloseContainer } from "./MovieTrailer.styles";
+import {
+  BigContainer,
+  TrailerContainer,
+  CloseContainer,
+} from "./MovieTrailer.styles";
 import { RiCloseCircleFill } from "react-icons/ri";
 
-const SeriesTrailer = ({ videoKey, setVideoKey, seriesTitle, isOpen, setIsOpen }) => {
-  
-
+const SeriesTrailer = ({
+  videoKey,
+  setVideoKey,
+  seriesTitle,
+  isOpen,
+  setIsOpen,
+}) => {
   useEffect(() => {
     const fetchVideoKey = async () => {
       try {
@@ -24,12 +32,13 @@ const SeriesTrailer = ({ videoKey, setVideoKey, seriesTitle, isOpen, setIsOpen }
 
           const video = videosResponse.data.results[0];
 
+          console.log(videosResponse.data.results);
+
           if (video) {
             setVideoKey(video.key);
           } else {
             setVideoKey(false);
           }
-
         }
       } catch (error) {
         console.error("Error fetching trailer:", error);
@@ -40,7 +49,6 @@ const SeriesTrailer = ({ videoKey, setVideoKey, seriesTitle, isOpen, setIsOpen }
   }, [seriesTitle]);
 
   const videoURL = `https://www.youtube.com/watch?v=${videoKey}`;
- 
 
   return (
     <BigContainer isOpen={isOpen} onClick={() => setIsOpen(false)}>

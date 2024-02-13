@@ -10,6 +10,7 @@ export const ImageAndTitleDiv = styled.div`
   > p {
     padding: 0 5px;
     margin: 5px 0;
+    font-size: 1rem;
   }
 `;
 
@@ -26,6 +27,11 @@ export const ImageContainer = styled.div`
   &:hover {
     transform: scale(1.03);
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  @media (max-width: 560px) {
+    width: 150px;
+    height: 250px;
   }
 `;
 
@@ -63,6 +69,13 @@ export const BigContainer = styled.div`
   font-size: 1.1rem;
   color: #fff;
   margin: 0 50px;
+
+  @media (max-width: 560px) {
+    h2 {
+      font-size: 1.8rem;
+      margin: 5px 0;
+    }
+  }
 `;
 
 export const LeftArrow = styled.div`

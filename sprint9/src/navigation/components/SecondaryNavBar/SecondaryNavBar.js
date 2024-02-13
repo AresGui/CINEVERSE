@@ -6,7 +6,7 @@ import {
   LinksContainer,
   LiLeft,
   StyledLink,
-  LiRight,
+  // LiRight,
   LogoLanding,
   StyledWord,
 } from "../MainNavBar/MainNavBar.styles";
@@ -31,15 +31,15 @@ const SecondaryNavBar = () => {
       <ToggleButton onClick={toggleMenu} isOpen={isMenuOpen} href="#">
         <ToggleBar></ToggleBar>
         <ToggleBar></ToggleBar>
-        <ToggleBar></ToggleBar>
+        {/* <ToggleBar></ToggleBar> */}
       </ToggleButton>
       <LinksContainer isOpen={isMenuOpen}>
         <LiLeft>
           <StyledLink href="/Movies" active={location.pathname === '/Movies'}>Movies</StyledLink>
         </LiLeft>
-        <LiRight>
+        <LiLeft>
           <StyledLink href="/Series" active={location.pathname === '/Series'}>TV Series</StyledLink>
-        </LiRight>
+        </LiLeft>
         {/* <Search /> */}
       </LinksContainer>
     </NavbarContainer>

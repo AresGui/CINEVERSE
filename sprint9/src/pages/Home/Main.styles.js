@@ -32,21 +32,50 @@ export const Image = styled.img`
   display: block;
   height: 600px;
   width: 100%;
-  object-fit: cover; //Para que la imagen no quede alargada
+  object-fit: cover;
 `;
 
 export const TextDiv = styled.div`
   position: absolute;
-  top: 75%; /* Position at the vertical center */
-  left: 50%; /* Position at the horizontal center */
-  transform: translate(-50%, -50%); /* Center the TextDiv */
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: justify;
-  color: white; /* Set text color */
-  width: 60%; /* Adjust the width as needed */
-  max-width: 800px; /* Set max-width for responsiveness */
-  padding: 20px; /* Add padding as needed */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  color: white;
+  width: 60%;
+  max-width: 800px;
+  padding: 20px;
+  box-sizing: border-box;
   z-index: 2;
+
+  @media (max-width: 560px) {
+    top: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+
+    h1 {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 2;
+
+      max-height: 8em;
+      overflow: auto;
+      &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+      }
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+      position: relative;
+      margin-bottom: 0;
+    }
+  }
 `;
 
 export const LeftArrow = styled.div`
